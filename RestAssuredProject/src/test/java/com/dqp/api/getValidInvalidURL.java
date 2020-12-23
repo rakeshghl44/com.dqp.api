@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
 
-public class get_valid_invalid_URL {
+public class getValidInvalidURL {
 	
 		
 	@Test(priority = 0) 

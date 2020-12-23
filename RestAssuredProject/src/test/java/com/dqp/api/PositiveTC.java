@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 
-public class Positive_TC {
+public class PositiveTC {
 	
 		
 	@Test(priority = 0) 

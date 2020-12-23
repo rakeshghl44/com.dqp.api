@@ -6,7 +6,7 @@ import static org.hamcrest.Matchers.*;
 import org.testng.annotations.Test;
 
 
-public class Test_GET_Advance {
+public class TestGETAdvance {
 	
 	@Test
 	public void test_getID() {

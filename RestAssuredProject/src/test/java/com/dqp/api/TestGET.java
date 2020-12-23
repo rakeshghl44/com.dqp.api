@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.*;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
 
-public class Test_GET {
+public class TestGET {
 	
 		
 	@Test(priority = 0) 

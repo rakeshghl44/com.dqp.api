@@ -1,22 +1,30 @@
 package com.dqp.api;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
+
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class NegativeTC {
 	
+	@BeforeSuite
+	public void setup() {
+		RestAssured.baseURI = "http://192.168.9.11:25200";
+	}
 		
-	@Test(priority = 0) 
-	void Test_login() { //Open URL with/w/o connecting VPN
+	@Test(priority = 1) 
+	void loginPage() { //Open URL with/w/o connecting VPN
 		
-		get("http://19.168.9.11:25200/login?no");  // -Ve test cases
+		get(RestAssured.baseURI + "/login34565");
 		
 	}
+	
 	@Test(priority = 2) 
-	void Test_google() { //Different URL with https
+	void google() { //Different URL with https
 		
 		Response response = get("https://www.google999.com");
 		
@@ -35,82 +43,82 @@ public class NegativeTC {
 	}
 	
 	@Test(priority = 3) 
-	void TestStroyboardTab() { //Different URL with http
+	void stroyboardTab() { //Different URL with http
 		
 		given()
-		.get("http://192.168.9.11:25200/homestoryboard5")
+		.get(RestAssured.baseURI + "/homestoryboard5")
 	.then()
 		.statusCode(200);
 	}
 	
 	@Test(priority = 4) 
-	void testEditMeasure() {
+	void editMeasure() {
 		given()
-		.get("http://192.168.9.11:25200/api/v1/measures204706e")
+		.get(RestAssured.baseURI + "/api/v1/measures204706e")
 	.then()
 		.statusCode(200);
 	}
 	
 	@Test(priority = 5) 
-	void testSpecificStoryboard() {
+	void specificStoryboard() {
 		given()
-		.get("http://192.168.9.11:25200/api/v1/storyboard/widgets/byStoryboardId/196124t")
+		.get(RestAssured.baseURI + "/api/v1/storyboard/widgets/byStoryboardId/196124t")
 	.then()
 		.statusCode(200);
 	}
 
 	@Test(priority = 6) 
-	void testMultipleWidgets() {
+	void multipleWidgets() {
 		given()
-		.get("http://192.168.9.11:25200/api/v1/storyboard/widgets/byStoryboardId/103411t")
+		.get(RestAssured.baseURI + "/api/v1/storyboard/widgets/byStoryboardId/103411t")
 	.then()
 		.statusCode(200);
 	}
 	
 	@Test(priority = 7) 
-	void testJobsTab() {
+	void jobsTab() {
 		given()
-		.get("http://192.168.9.11:25200/home/jobs5")
+		.get(RestAssured.baseURI + "/home/jobs5")
 	.then()
 		.statusCode(200);
 	}
 	
 	@Test(priority = 8) 
-	void testDataAssetsTab() {
+	void dataAssetsTab() {
 		given()
-		.get("http://192.168.9.11:25200/home/data-assets5")
+		.get(RestAssured.baseURI + "/home/data-assets5")
 	.then()
 		.statusCode(200);
 	}
 	
 	@Test(priority = 9) 
-	void testDashboardTab() {
+	void dashboardTab() {
 		given()
-		.get("http://192.168.9.11:25200/home/dashboard/anomaly5")
+		.get(RestAssured.baseURI + "/home/dashboard/anomaly5")
 	.then()
 		.statusCode(200);
 	}
 	
 
 	@Test(priority = 9) 
-	void testProfilingDashboards() {
+	void profilingDashboards() {
 		given()
-		.get("http://192.168.9.11:25200/home/dashboard/profiling4")
+		.get(RestAssured.baseURI + "/home/dashboard/profiling4")
 	.then()
 		.statusCode(200);
 	}
 	
 	@Test(priority = 10) 
-	void testAnomalyDashboardView() {
+	void anomalyDashboardView() {
 		given()
-		.get("http://192.168.9.11:25200/home/dashboard/anomaly/182055t")
+		.get(RestAssured.baseURI + "/home/dashboard/anomaly/182055t")
 	.then()
 		.statusCode(200);
 	}
 	@Test(priority = 11) 
-	void testDelete() {   //208957,206576,208968
+	void delete() {   //208957,206576,208968
 		when().
-			delete("http://192.168.9.11:25200/api/v1/measures/208957").
+			delete(RestAssured.baseURI + "/api/v1/measures/208957").
 		then().
 		statusCode(204).log().all();
 		

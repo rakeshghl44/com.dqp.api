@@ -28,8 +28,8 @@ public class Authentication {
 			 * authScheme.setPassword("cGFzc3dvcmQ="); RestAssured.authentication =
 			 * authScheme;
 			 */
-			int code = RestAssured.given()
-					.auth().preemptive().basic(username, password)
+			RequestSpecification code = RestAssured.given()
+					.auth().preemptive().basic("username", "password");
 					
 			given().
 			get("http://192.168.9.11:25200/api/v1/measures/204706").

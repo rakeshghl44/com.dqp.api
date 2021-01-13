@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="method_types.Positive_TC">
+      <class name="com.dqp.api.storyboard.CreateUpdateStoryboardProfiling">
         <methods>
-          <include name="testDelete"/>
+          <include name="delete"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- method_types.Positive_TC -->
+      </class> <!-- com.dqp.api.storyboard.CreateUpdateStoryboardProfiling -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

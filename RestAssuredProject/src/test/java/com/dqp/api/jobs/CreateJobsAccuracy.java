@@ -14,26 +14,13 @@ public class CreateJobsAccuracy {
 	}
 	
 		
-	/*
-	 * @Test(priority = 0) void loginAuthentication() { //Open URL with/w/o
-	 * connecting VPN
-	 * 
-	 * RestAssured.given().contentType("application/json")
-	 * .body("{"+"\"username\": \"data_steward\",\"password\": \"cGFzc3dvcmQ=\"}")
-	 * .post(RestAssured.baseURI + "/api/v1/login/authenticate").then();
-	 * 
-	 * }
-	 */
-	
 	@Test(priority = 0, enabled = true)  
 	void createAccuracyMeasureType() { //Open URL with/w/o connecting VPN  /*Name change*/	
 			
 			RestAssured.given().contentType("application/json")
 				.body("")
 				.post(RestAssured.baseURI + "/api/v1/jobs").then().log().all();
-				
-		}
-	
+	}
 	
 	@Test(priority = 1 , enabled = false) 
 	void delete() {   //208957,206576,208968

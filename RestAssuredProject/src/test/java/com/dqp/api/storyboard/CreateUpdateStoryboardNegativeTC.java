@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import io.restassured.RestAssured;
 
-public class CreateUpdateStoryboardAccuracy {
+public class CreateUpdateStoryboardNegativeTC {
 	
 	
 	@BeforeSuite
@@ -13,15 +13,15 @@ public class CreateUpdateStoryboardAccuracy {
 		RestAssured.baseURI = "http://192.168.9.11:25200";
 	}	
 	
-	@Test(priority = 0, enabled = false) 
+	@Test(priority = 0, enabled = false) // change in values
 	void createStory() { //Note down ID [e.g. - storyboard_id": 211782,] generated in log while API request
 			
 			RestAssured.given().contentType("application/json")
-				.body("{\"widgets\":[{\"x\":0,\"y\":0,\"template_json\":{\"name\":\"Verify_PM-2959_ACCURACY\",\"id\""
-						+ ":162817,\"dqType\":\"ACCURACY\",\"measureName\":\"Verify_PM-2959_ACCURACY\",\"measureId\""
+				.body("{\"widgets\":[{\"x\":0,\"y\":0,\"template_json\":{\"name\":\"Verify_PM-2959_#$%\",\"id\""
+						+ ":162817,\"dqType\":\"ACCURACY\",\"measureName\":\"Verify_PM-2959_#$%\",\"measureId\""
 						+ ":162809,\"widget_type\":\"chart\"},\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\""
 						+ ":false,\"pos_x\":0,\"pos_y\":0,\"height\":4,\"width\":6}],\"user_id\":1,\"project_id\":3,"
-						+ "\"name\":\"My Storyboard - Default - 23\",\"default_flag\":\"N\"}")
+						+ "\"name\":\"My Storyboard - Default - $$$\",\"default_flag\":\"N\"}")
 				.post(RestAssured.baseURI + "/api/v1/storyboard").then().log().all();
 		}
 	
@@ -66,7 +66,7 @@ public class CreateUpdateStoryboardAccuracy {
 	@Test(priority = 1 , enabled = true) 
 	void delete() {   //208957,206576,208968
 		when().
-			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/211813").
+			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/212745").
 		then().
 		statusCode(204).log().all();
 	}

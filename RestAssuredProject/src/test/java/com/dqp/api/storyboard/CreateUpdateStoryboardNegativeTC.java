@@ -63,10 +63,13 @@ public class CreateUpdateStoryboardNegativeTC {
 				
 		}	
 		
-	@Test(priority = 1 , enabled = true) 
-	void delete() {   //208957,206576,208968
+	@Test(priority = 1 , enabled = false) 
+	void delete() {   //208957,206576,208968 //path parameter
+		String id = "211782";
+		given().
+			pathParam("StoryboardId", id).
 		when().
-			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/212745").
+			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/{StoryboardId}").
 		then().
 		statusCode(204).log().all();
 	}

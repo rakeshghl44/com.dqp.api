@@ -1,11 +1,9 @@
 package com.dqp.api.measure;
 
-import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.*;
 import io.restassured.RestAssured;
-import io.restassured.response.Response;
 
 public class CreateMeasureComplete {
 	
@@ -36,7 +34,7 @@ public class CreateMeasureComplete {
 						+ "\"HIVE\",\"data.unit\":\"1day\",\"data.time.zone\":\"\",\"config\":{\"sourceType\":"
 						+ "\"default\",\"data.time.aggregateData\":false,\"instance\":\"Quantum\",\"cfsProfile\":"
 						+ "null,\"database\":\"default\",\"table.name\":\"lte_msisdn_leakage_daily_part_day\",\"where\":"
-						+ "\"day=#YYYYMMDD#\"}}],\"name\":\"source\"}],\"name\":\"Test_Completeness_11_01\",\"description\":\"\","
+/*Name*/				+ "\"day=#YYYYMMDD#\"}}],\"name\":\"source\"}],\"name\":\"Test_Completeness_20_01\",\"description\":\"\","
 						+ "\"organization\":\"\",\"owner\":\"data_steward\",\"id\":null,\"clone\":false,\"evaluate.rule\""
 						+ ":{\"rules\":[{\"out\":[{\"type\":\"metric\",\"name\":\"lte_duration_null_check\",\"flatten\":"
 						+ "\"map\"}],\"rule\":\"select sum(total_count) as total_count, sum(complete_count) "

@@ -29,8 +29,8 @@ public class CreateJobsComplete {
 	void createCompletenessJob() { //Open URL with/w/o connecting VPN
 			
 			RestAssured.given().contentType("application/json")
-				.body("{\"job.name\":\"TEST_E2E_Completeness\",\"job.type\":\"batch\",\"measure.id\":211496,\"dq.type\""
-						+ ":\"COMPLETENESS\",\"measure.name\":\"TEST_E2E_Completeness\",\"projectId\":3,\"cron.expression\""
+				.body("{\"job.name\":\"Test_Completeness_20_01\",\"job.type\":\"batch\",\"measure.id\":211496,\"dq.type\""
+						+ ":\"COMPLETENESS\",\"measure.name\":\"Test_Completeness_20_01\",\"projectId\":3,\"cron.expression\""
 						+ ":\"0 */5 * ? * *\",\"cron.time.zone\":\"GMT+5:30\",\"owner\":\"data_steward\",\"data.segments\""
 						+ ":[{\"data.connector.name\":\"source_1610426653360\",\"as.baseline\":true,\"segment.range\""
 						+ ":{\"begin\":\"-500day\",\"length\":\"10day\"}}],\"runCount\":0}")
@@ -38,14 +38,14 @@ public class CreateJobsComplete {
 				
 		}
 	
-	@Test(priority = 1, enabled = false)   //Default project workspace
+	@Test(priority = 1, enabled = true)   //Default project workspace
 	void editCompletenessJob() { //Open URL with/w/o connecting VPN
 			
 			RestAssured.given().contentType("application/json")
-				.body("{\"id\":211534,\"createdDate\":1610427755303,\"modifiedDate\":null,\"projectId\":3,\"reprocess\""
+				.body("{\"id\":213079,\"createdDate\":1610427755303,\"modifiedDate\":null,\"projectId\":3,\"reprocess\""
 						+ ":false,\"owner\":\"data_steward\",\"sensitivity\":null,\"sensitivityDeviation\":null,\"measure\""
 						+ ":{\"measure.type\":\"griffin\",\"id\":211496,\"createdDate\":1610426652491,\"modifiedDate\""
-						+ ":null,\"name\":\"TEST_E2E_Completeness\",\"jobId\":null,\"projectId\":3,\"owner\""
+						+ ":null,\"name\":\"Test_Completeness_20_01\",\"jobId\":null,\"projectId\":3,\"owner\""
 						+ ":\"data_steward\",\"description\":\"\",\"organization\":\"\",\"editable\":true,\"editInfo\""
 						+ ":\"{\\\"dsType\\\":\\\"hive\\\",\\\"dataSource\\\":\\\"hive\\\",\\\"schema\\\":\\\"default\\\","
 						+ "\\\"table\\\":\\\"lte_msisdn_leakage_daily_part_day\\\",\\\"process\\\":\\\"BATCH\\\","

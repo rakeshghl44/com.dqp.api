@@ -57,9 +57,12 @@ public class CreateUpdateStoryboardAnomaly {
 	
 	
 	@Test(priority = 1 , enabled = false) 
-	void delete() {   //208957,206576,208968
+	void delete() {   //208957,206576,208968 //path parameter
+		String id = "211782";
+		given().
+			pathParam("StoryboardId", id).
 		when().
-			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/211782").
+			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/{StoryboardId}").
 		then().
 		statusCode(204).log().all();
 	}

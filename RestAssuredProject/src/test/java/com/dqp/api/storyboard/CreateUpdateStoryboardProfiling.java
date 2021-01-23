@@ -13,7 +13,7 @@ public class CreateUpdateStoryboardProfiling {
 		RestAssured.baseURI = "http://192.168.9.11:25200";
 	}	
 	
-	@Test(priority = 0, enabled = false) 
+	@Test(priority = 0, enabled = true) 
 	void createStory() { //Note down ID [e.g. - storyboard_id": 211782,] generated in log while API request
 			
 			RestAssured.given().contentType("application/json")
@@ -26,7 +26,7 @@ public class CreateUpdateStoryboardProfiling {
 		}
 	
 	@Test(priority = 0, enabled = false) 
-	void updateStory() { //Replace newly generated storyboard_id wherever it as below code	
+	void updateStory() { //Replace newly generated storyboard_id on below code	
 			
 			RestAssured.given().contentType("application/json")
 				.body("{\"storyboard_id\":211782,\"user_id\":1,\"project_id\":3,\"name\":\"My Storyboard - Default - 20\","
@@ -51,14 +51,17 @@ public class CreateUpdateStoryboardProfiling {
 						+ "\"id\":203757,\"dqType\":\"PROFILING\",\"measureName\":\"DP_test_delta_migration\",\"measureId\":203751,"
 						+ "\"widget_type\":\"chart\"},\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,"
 /* Replace id*/ 		+ "\"storyboard_id\":211782,\"pos_x\":6,\"pos_y\":8,\"height\":4,\"width\":6}]}")
-				.post(RestAssured.baseURI + "/api/v1/storyboard").then().log().all();
+				.put(RestAssured.baseURI + "/api/v1/storyboard").then().log().all();
 				
 		}		
 	
 	@Test(priority = 1 , enabled = false) 
-	void delete() {   //208957,206576,208968
+	void delete() {   //208957,206576,208968 //path parameter
+		String id = "211782";
+		given().
+			pathParam("StoryboardId", id).
 		when().
-			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/211782").
+			delete(RestAssured.baseURI + "/api/v1/storyboard/byStoryboardId/{StoryboardId}").
 		then().
 		statusCode(204).log().all();
 	}

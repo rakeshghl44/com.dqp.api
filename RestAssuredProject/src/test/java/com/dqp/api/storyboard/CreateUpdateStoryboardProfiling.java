@@ -27,30 +27,33 @@ public class CreateUpdateStoryboardProfiling {
 	
 	@Test(priority = 0, enabled = false) 
 	void updateStory() { //Replace newly generated storyboard_id on below code	
+		
+		String idVal="215722";
+		String storyboardName = "My Storyboard - Default - 20";	
 			
 			RestAssured.given().contentType("application/json")
-				.body("{\"storyboard_id\":211782,\"user_id\":1,\"project_id\":3,\"name\":\"My Storyboard - Default - 20\","
-/* Replace id*/			+ "\"default_flag\":\"N\",\"widgets\":[{\"widget_id\":211754,\"storyboard_id\":211782,\"pos_x\":0,\"pos_y\""
+				.body("{\"storyboard_id\":"+idVal+",\"user_id\":1,\"project_id\":3,\"name\":"+storyboardName+","
+/* Replace id*/			+ "\"default_flag\":\"N\",\"widgets\":[{\"widget_id\":211754,\"storyboard_id\":"+idVal+",\"pos_x\":0,\"pos_y\""
 						+ ":0,\"width\":6,\"height\":4,\"width_unit\":\"GRID\",\"user_defined\":\"Y\",\"deleted\":false,"
 						+ "\"template_json\":{\"name\":\"Online_Completeness_12\",\"id\":203160,\"dqType\":\"COMPLETENESS\","
 						+ "\"measureName\":\"Online_Completeness_1\",\"measureId\":202880,\"widget_type\":\"chart\",\"hasAggregation\""
 						+ ":false},\"x\":0,\"y\":0,\"rows\":4,\"cols\":6},{\"x\":6,\"y\":0,\"template_json\":{\"name\":\"RG_TEST_Notif\""
 						+ ",\"id\":206658,\"dqType\":\"PROFILING\",\"measureName\":\"RG_TEST_Notif\",\"measureId\":206647,"
 						+ "\"widget_type\":\"chart\"},\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,"
-/* Replace id*/			+ "\"storyboard_id\":211782,\"pos_x\":6,\"pos_y\":0,\"height\":4,\"width\":6},{\"x\":0,\"y\":4,\"template_json\""
+/* Replace id*/			+ "\"storyboard_id\":"+idVal+",\"pos_x\":6,\"pos_y\":0,\"height\":4,\"width\":6},{\"x\":0,\"y\":4,\"template_json\""
 						+ ":{\"name\":\"RG_test_prof\",\"id\":206596,\"dqType\":\"PROFILING\",\"measureName\":\"DP_test_delta_agg_dev_1\","
 						+ "\"measureId\":201848,\"widget_type\":\"chart\"},\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\""
-/* Replace id*/ 		+ ":false,\"storyboard_id\":211782,\"pos_x\":0,\"pos_y\":4,\"height\":4,\"width\":6},{\"x\":6,\"y\":4,"
+/* Replace id*/ 		+ ":false,\"storyboard_id\":"+idVal+",\"pos_x\":0,\"pos_y\":4,\"height\":4,\"width\":6},{\"x\":6,\"y\":4,"
 						+ "\"template_json\":{\"name\":\"DP_test_delta_agg_year_month_1\",\"id\":203863,\"dqType\":\"PROFILING\","
 						+ "\"measureName\":\"DP_test_delta_agg_year_month_1\",\"measureId\":203857,\"widget_type\":\"chart\"},\"cols\""
-/* Replace id*/			+ ":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,\"storyboard_id\":211782,\"pos_x\":6,\"pos_y\":4,"
+/* Replace id*/			+ ":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,\"storyboard_id\":"+idVal+",\"pos_x\":6,\"pos_y\":4,"
 						+ "\"height\":4,\"width\":6},{\"x\":0,\"y\":8,\"template_json\":{\"name\":\"DP_delta_agg_dev_1\",\"id\":204374,"
 						+ "\"dqType\":\"PROFILING\",\"measureName\":\"DP_delta_agg_dev_1\",\"measureId\":204366,\"widget_type\":\"chart\"},"
-/* Replace id*/ 		+ "\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,\"storyboard_id\":211782,\"pos_x\":0,\"pos_y\":8,"
+/* Replace id*/ 		+ "\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,\"storyboard_id\":"+idVal+",\"pos_x\":0,\"pos_y\":8,"
 						+ "\"height\":4,\"width\":6},{\"x\":6,\"y\":8,\"template_json\":{\"name\":\"DP_test_delta_migration\","
 						+ "\"id\":203757,\"dqType\":\"PROFILING\",\"measureName\":\"DP_test_delta_migration\",\"measureId\":203751,"
 						+ "\"widget_type\":\"chart\"},\"cols\":6,\"rows\":4,\"user_defined\":\"Y\",\"deleted\":false,"
-/* Replace id*/ 		+ "\"storyboard_id\":211782,\"pos_x\":6,\"pos_y\":8,\"height\":4,\"width\":6}]}")
+/* Replace id*/ 		+ "\"storyboard_id\":"+idVal+",\"pos_x\":6,\"pos_y\":8,\"height\":4,\"width\":6}]}")
 				.put(RestAssured.baseURI + "/api/v1/storyboard").then().log().all();
 				
 		}		

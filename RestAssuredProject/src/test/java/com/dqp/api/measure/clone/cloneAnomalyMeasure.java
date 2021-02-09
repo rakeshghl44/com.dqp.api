@@ -30,13 +30,15 @@ public class cloneAnomalyMeasure {
 	@Test(priority = 0, enabled = true)  
 	void createAnomalyMeasureType() { //Open URL with/w/o connecting VPN  /*Name change*/	
 			
+		String measureName = "Test_clone_accuracy_11_01";
+		
 			RestAssured.given().contentType("application/json")
 				.body("{\"measure.type\":\"griffin\",\"deleted\":false,\"process.type\":\"BATCH\",\"data.sources\""
 						+ ":[{\"connectors\":[{\"predicates\":[],\"name\":\"source_1610367877776\",\"type\":\"HIVE\","
 						+ "\"data.unit\":\"1day\",\"data.time.zone\":\"\",\"config\":{\"sourceType\":\"default\","
 						+ "\"data.time.aggregateData\":false,\"instance\":\"Quantum\",\"cfsProfile\":null,\"database\""
 						+ ":\"default\",\"table.name\":\"lte_msisdn_leakage_daily_part_day\",\"where\":\"\"}}],\"name\""
-						+ ":\"source\"}],\"name\":\"Test_clone_Anomaly_11_01\",\"description\":\"\",\"organization\":\"\","
+						+ ":\"source\"}],\"name\":"+measureName+",\"description\":\"\",\"organization\":\"\","
 						+ "\"owner\":\"data_steward\",\"clone\":true,\"dq.type\":\"ANOMALY\",\"projectId\":8252,"
 						+ "\"evaluate.rule\":{\"rules\":[{\"out\":[{\"type\":\"metric\",\"name\":\"lte_duration\","
 						+ "\"flatten\":\"map\"}],\"rule\":\"anomaly_median\",\"dq.type\":\"ANOMALY\",\"dsl.type\""

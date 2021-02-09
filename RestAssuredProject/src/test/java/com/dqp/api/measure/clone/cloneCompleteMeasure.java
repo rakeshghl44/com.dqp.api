@@ -30,13 +30,15 @@ public class cloneCompleteMeasure {
 	@Test(priority = 0, enabled = true) 
 	void createCompletenessMeasureType() { //Open URL with/w/o connecting VPN
 			
+		String measureName = "Test_clone_accuracy_11_01";
+		
 			RestAssured.given().contentType("application/json")
 				.body("{\"measure.type\":\"griffin\",\"deleted\":false,\"process.type\":\"BATCH\",\"data.sources\""
 						+ ":[{\"connectors\":[{\"predicates\":[],\"name\":\"source_1610369708816\",\"type\":\"HIVE\","
 						+ "\"data.unit\":\"1day\",\"data.time.zone\":\"\",\"config\":{\"sourceType\":\"default\","
 						+ "\"data.time.aggregateData\":false,\"instance\":\"Quantum\",\"cfsProfile\":null,\"database\":"
 						+ "\"default\",\"table.name\":\"lte_msisdn_leakage_daily_part_day\",\"where\":\"day=#YYYYMMDD#\"}}],"
-						+ "\"name\":\"source\"}],\"name\":\"Test_Clone_Completeness_20_01\",\"description\":\"\","
+						+ "\"name\":\"source\"}],\"name\":"+measureName+",\"description\":\"\","
 						+ "\"organization\":\"\",\"owner\":\"data_steward\",\"clone\":true,\"evaluate.rule\":{\"rules\""
 						+ ":[{\"out\":[{\"type\":\"metric\",\"name\":\"lte_duration__nlte_duration_null_check\",\"flatten\""
 						+ ":\"map\"}],\"rule\":\"select sum(total_count) as total_count, sum(complete_count) as "

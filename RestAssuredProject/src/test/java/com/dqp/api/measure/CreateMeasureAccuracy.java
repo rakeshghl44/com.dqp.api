@@ -27,9 +27,11 @@ public class CreateMeasureAccuracy {
 	
 	@Test(priority = 0, enabled = true)  
 	void createAccuracyMeasureType() { //Open URL with/w/o connecting VPN  /*Name change*/	
-			
+		
+		String measureName = "Test_accuracy_11_01";
+		
 			RestAssured.given().contentType("application/json")
-				.body("{\"measure.type\":\"griffin\",\"name\":\"Test_accuracy_11_01\",\"owner\":\"data_steward\","
+				.body("{\"measure.type\":\"griffin\",\"name\":\"+measureName+\",\"owner\":\"data_steward\","
 						+ "\"description\":\"\",\"organization\":\"\",\"dq.type\":\"ACCURACY\",\"rule.description\""
 						+ ":{\"details\":[{\"name\":\"ACCURACY\",\"infos\":\"source.lte_duration=target.lte_duration AND "
 						+ "source.nlte_duration=target.nlte_duration\",\"key\":[{\"source\":\"lte_duration\",\"type\":\"double\",\"rule\""

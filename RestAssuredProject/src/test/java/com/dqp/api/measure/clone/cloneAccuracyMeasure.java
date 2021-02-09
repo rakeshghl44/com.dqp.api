@@ -26,9 +26,11 @@ public class cloneAccuracyMeasure {
 	
 	@Test(priority = 0, enabled = true)  
 	void createAccuracyMeasureType() { //Open URL with/w/o connecting VPN  /*Name change*/	
-			
+		
+		String measureName = "Test_clone_accuracy_11_01";
+		
 			RestAssured.given().contentType("application/json")
-				.body("{\"measure.type\":\"griffin\",\"name\":\"Test_clone_accuracy_11_01\",\"owner\":\"data_steward\","
+				.body("{\"measure.type\":\"griffin\",\"name\":"+measureName+",\"owner\":\"data_steward\","
 						+ "\"description\":\"\",\"organization\":\"\",\"dq.type\":\"ACCURACY\",\"rule.description\""
 						+ ":{\"details\":[{\"name\":\"ACCURACY\",\"infos\":\"source.lte_duration=target.lte_duration "
 						+ "AND source.nlte_duration=target.nlte_duration\",\"key\":[{\"source\":\"lte_duration\",\"type\""
@@ -42,7 +44,6 @@ public class cloneAccuracyMeasure {
 				.post(RestAssured.baseURI + "/api/v1/measures").then().log().all();
 				
 		}
-	
 	
 	@Test(priority = 1 , enabled = false) 
 	void delete() {   //208957,206576,208968
